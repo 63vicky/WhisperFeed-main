@@ -13,47 +13,51 @@ export default function Posts() {
         {
           id: '1',
           title: 'Getting Started with WhisperFeed',
-          content: 'Welcome to WhisperFeed! This platform allows you to share your thoughts and connect with others. Start posting today!',
+          content:
+            'Welcome to WhisperFeed! This platform allows you to share your thoughts and connect with others. Start posting today!',
           author: {
             id: '1',
-            username: 'sarah_dev'
+            username: 'sarah_dev',
           },
           createdAt: new Date().toISOString(),
-          likes: []
+          likes: [],
         },
         {
           id: '2',
           title: '',
-          content: 'Just deployed a new feature on our platform. Check it out and let me know what you think! #coding #webdev',
+          content:
+            'Just deployed a new feature on our platform. Check it out and let me know what you think! #coding #webdev',
           author: {
             id: '2',
-            username: 'techguru'
+            username: 'techguru',
           },
           createdAt: new Date(Date.now() - 3600000).toISOString(),
-          likes: ['1', '3']
+          likes: ['1', '3'],
         },
         {
           id: '3',
           title: '',
-          content: 'The weather is perfect today for some outdoor coding. Anyone else like working outside when it's nice?',
+          content:
+            "The weather is perfect today for some outdoor coding. Anyone else like working outside when it's nice?",
           author: {
             id: '3',
-            username: 'codeoutdoors'
+            username: 'codeoutdoors',
           },
           createdAt: new Date(Date.now() - 7200000).toISOString(),
-          likes: ['1', '2', '4']
+          likes: ['1', '2', '4'],
         },
         {
           id: '4',
           title: 'Weekly Tech Roundup',
-          content: 'This week in tech: AI advancements, new JavaScript frameworks, and the continued rise of React. What tech news are you following?',
+          content:
+            'This week in tech: AI advancements, new JavaScript frameworks, and the continued rise of React. What tech news are you following?',
           author: {
             id: '4',
-            username: 'tech_weekly'
+            username: 'tech_weekly',
           },
           createdAt: new Date(Date.now() - 86400000).toISOString(),
-          likes: ['2']
-        }
+          likes: ['2'],
+        },
       ]);
       setLoading(false);
     }, 1000);
@@ -65,10 +69,10 @@ export default function Posts() {
       <div className="sticky top-0 z-10 bg-black bg-opacity-70 backdrop-blur-sm p-4 border-b border-gray-800">
         <h1 className="text-xl font-bold">Home</h1>
       </div>
-      
+
       {/* Compose Post */}
       <ComposePost />
-      
+
       {/* Posts Feed */}
       {loading ? (
         <div className="flex justify-center items-center h-64">
@@ -76,11 +80,11 @@ export default function Posts() {
         </div>
       ) : (
         <div>
-          {posts.map(post => (
+          {posts.map((post) => (
             <Post key={post.id} post={post} />
           ))}
         </div>
       )}
     </div>
   );
-} 
+}
